@@ -97,6 +97,7 @@ struct proc {
   // these are private to the process, so p->lock need not be held.
   uint64 kstack;               // Bottom of kernel stack for this process
   uint64 sz;                   // Size of process memory (bytes)
+  uint64 ustack;		// Bottom of userspace stack for this process
   pagetable_t pagetable;       // Page table
   struct trapframe *tf;        // data page for trampoline.S
   struct context context;      // swtch() here to run process
